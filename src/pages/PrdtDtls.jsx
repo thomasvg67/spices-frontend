@@ -80,7 +80,7 @@ const PrdtDtls = () => {
     }
 
     try {
-      await axios.post(`http://localhost:5000/api/reviews/${productId}`, reviewForm, axiosConfig);
+      await axios.post(`https://spices-backend-uii6.onrender.com/api/reviews/${productId}`, reviewForm, axiosConfig);
       toast.success('Review submitted!');
       setReviewForm({ name: '', email: '', review: '', rating: 0 });
     } catch (error) {
@@ -96,11 +96,11 @@ const PrdtDtls = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/products/${productId}`);
+        const res = await axios.get(`https://spices-backend-uii6.onrender.com/api/products/${productId}`);
         const productData = res.data;
         setProduct(productData);
         if (productData.images?.length > 1) {
-          setSelectedImage(`http://localhost:5000/uploads/${productData.images[1]}`);
+          setSelectedImage(`https://spices-backend-uii6.onrender.com/uploads/${productData.images[1]}`);
         }
       } catch (error) {
         console.error('Error fetching product:', error);
@@ -115,7 +115,7 @@ const PrdtDtls = () => {
     const fetchReviews = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5000/api/reviews/${productId}`);
+        const res = await axios.get(`https://spices-backend-uii6.onrender.com/api/reviews/${productId}`);
         setReviews(res.data);
       } catch (error) {
         console.error("Failed to fetch reviews", error);
@@ -134,8 +134,8 @@ const PrdtDtls = () => {
     const fetchCounts = async () => {
       try {
         const [cartRes, wishlistRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/cart/count', axiosConfig),
-          axios.get('http://localhost:5000/api/wishlist/count', axiosConfig),
+          axios.get('https://spices-backend-uii6.onrender.com/api/cart/count', axiosConfig),
+          axios.get('https://spices-backend-uii6.onrender.com/api/wishlist/count', axiosConfig),
         ]);
         setCartCount(cartRes.data.count);
         setWishlistCount(wishlistRes.data.count);
@@ -157,7 +157,7 @@ const PrdtDtls = () => {
 
   const handleAddToCart = async () => {
     try {
-      await axios.post('http://localhost:5000/api/cart', { productId, quantity: quantity || 1 }, axiosConfig);
+      await axios.post('https://spices-backend-uii6.onrender.com/api/cart', { productId, quantity: quantity || 1 }, axiosConfig);
       toast.success('Added to cart!');
       setCartCount(prev => prev + 1);
     } catch (error) {
@@ -168,7 +168,7 @@ const PrdtDtls = () => {
 
   const handleAddToWishlist = async () => {
     try {
-      await axios.post('http://localhost:5000/api/wishlist', { productId }, axiosConfig);
+      await axios.post('https://spices-backend-uii6.onrender.com/api/wishlist', { productId }, axiosConfig);
       toast.success('Added to wishlist!');
       setWishlistCount(prev => prev + 1);
     } catch (error) {
@@ -184,7 +184,7 @@ const PrdtDtls = () => {
   const gstAmount = (discountedPrice * (product.gst || 0)) / 100;
   const finalPrice = discountedPrice + gstAmount;
 
-  const images = product.images.slice(1).map(img => `http://localhost:5000/uploads/${img}`);
+  const images = product.images.slice(1).map(img => `https://spices-backend-uii6.onrender.com/uploads/${img}`);
 
 
   return (
@@ -236,7 +236,7 @@ const PrdtDtls = () => {
                             >
 
                               <figure>
-                                <img src={`http://localhost:5000/uploads/${img}`} alt={`thumb-${index}`} />
+                                <img src={`https://spices-backend-uii6.onrender.com/uploads/${img}`} alt={`thumb-${index}`} />
                               </figure>
                             </a>
                           </li>

@@ -153,7 +153,7 @@ const ProductSection = () => {
                     <div className="image">
                       <a onClick={() => handleViewDetails(product._id)}>
                         {product.images && product.images.length > 0 && (
-                          <img src={`http://localhost:5000/uploads/${product.images[0]}`} alt={product.name} />)}
+                          <img src={`https://spices-backend-uii6.onrender.com/uploads/${product.images[0]}`} alt={product.name} />)}
                       </a>
                     </div>
                     <div className="icon-box">

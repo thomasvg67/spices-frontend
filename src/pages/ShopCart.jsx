@@ -150,7 +150,7 @@ const ShopCart = () => {
                           <img
                             src={
                               product.images?.[0]
-                                ? `http://localhost:5000/uploads/${product.images[0]}`
+                                ? `https://spices-backend-uii6.onrender.com/uploads/${product.images[0]}`
                                 : '/assets/images/resource/products/placeholder.png'
                             }
                             alt={product.name || 'Product'}
