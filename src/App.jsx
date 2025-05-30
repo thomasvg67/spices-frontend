@@ -30,7 +30,7 @@ import UserProfile from './pages/UserProfile';
 import AdmPrdtLst from './pages/admin/AdmPrdtLst';
 import AdmRvw from './pages/admin/AdmRvw';
 import PrdtDtls from './pages/PrdtDtls';
-import Prdts from './pages/prdts';
+import Prdts from './pages/Prdts';
 
 
 function App() {
