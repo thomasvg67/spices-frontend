@@ -127,7 +127,7 @@ const Prdts = () => {
                     <div className="title-outer">
                         <h1 className="title">Shop</h1>
                         <ul className="page-breadcrumb">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li>Products</li>
                         </ul>
                     </div>

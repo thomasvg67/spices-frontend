@@ -284,7 +284,7 @@ const HeaderSection = ({ }) => {
 
                                             <li className="dropdown"><a href="#">Shop</a>
                                                 <ul>
-                                                    <li><a href="/shop-products">Products</a></li>
+                                                    <li><a href="/prdts">Products</a></li>
                                                     <li><a href="/shop-products-sidebar">Products with Sidebar</a></li>
                                                     <li><a href="/shop-product-details">Product Details</a></li>
                                                     <li><a href="/shop-cart">Cart</a></li>
