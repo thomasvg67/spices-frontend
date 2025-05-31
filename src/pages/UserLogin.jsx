@@ -20,6 +20,8 @@ const UserLogin = () => {
       if (res.status === 200 && res.data.user.role === 'user') {
         localStorage.setItem('token', res.data.token);
         navigate('/');
+        window.location.reload();
+
 
       } else {
         alert('Invalid credentials or unauthorized role');
